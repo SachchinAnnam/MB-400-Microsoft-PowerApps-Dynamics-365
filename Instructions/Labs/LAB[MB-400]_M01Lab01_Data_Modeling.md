@@ -4,7 +4,7 @@ lab:
     module: 'Module 01: Introduction to developing with the Power Platform'
 ---
 
-#MB-400: Microsoft PowerApps + Dynamics 365 Developer
+# MB-400: Microsoft PowerApps + Dynamics 365 Developer
 ## Module 1, Lab 1 – Data Modeling
 
 
