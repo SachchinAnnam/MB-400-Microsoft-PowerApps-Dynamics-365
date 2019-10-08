@@ -1,4 +1,4 @@
-MB-400 Microsoft PowerApps + Dynamics 365 Developer
+# MB-400 Microsoft PowerApps + Dynamics 365 Developer
 
 - **[Download Latest Student Handbook and AllFiles Content](../../releases/latest)**
 - **Are you a MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
