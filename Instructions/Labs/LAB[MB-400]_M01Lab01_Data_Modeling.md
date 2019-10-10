@@ -16,25 +16,24 @@ build applications and perform automation to enable the regional building
 department to manage the permitting process. This will be an end-to-end solution
 which will help you understand the overall process flow.
 
-In this lab, you will set up a development and production environment, create
+In this lab, you will set up a development and production environment and create
 solutions to track your changes. You will also create a data model to support
 the following requirements:
 
 -   R1 – Track the status of permits issued for new buildings and existing
     building modifications
 
--   R2 – Permits are associated with a Build Site, which represents the building
+-   R2 – Associate permits with a Build Site, which represents the building
     or land being modified
 
--   R3 – Permit type indicates the type of permit and inspections, other data
+-   R3 – Track permit type to indicate the type of permit, any inspections, or other data
     that might be required on a permit
 
--   R4 – Inspections completed on the permit work are to be tracked for the
-    entire process i.e., from request of inspection to the pass or fail of the
-    inspection
+-   R4 – Track inspections completed on the permit for the
+    entire process (i.e., from request of inspection to the pass or fail of the
+    inspection)
 
--   R5 – Permits, for our lab purposes, are requested by a person and we need to
-    track who requested each permit
+-   R5 – Track the permit requestor 
 
 High-level lab steps
 ======================
