@@ -112,7 +112,7 @@ First, we will create the Production Environment.
 
 12. Click **Save**.
 
-13. 12. Your environment may take a few minutes to provision. You can click the **Refresh** button to refresh the subgrid. When the environment is provisioned, the **State** will change to Ready.
+13. Your environment may take a few minutes to provision. You can click the **Refresh** button to refresh the subgrid. When the environment is provisioned, the **State** will change to Ready.
 
 14. If you did not previously create your database, select your environment and click **Create my database**. Otherwise, skip this step.
 
