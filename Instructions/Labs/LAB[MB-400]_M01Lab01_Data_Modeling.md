@@ -39,7 +39,7 @@ High-level lab steps
 ======================
 
 To prepare your learning environments you will create a solution and publisher,
-add both new and existing components that are necessary to meet the application
+and add both new and existing components that are necessary to meet the application
 requirements. Refer to the data model document for the metadata description
 (entities, field types and relationships). Your solution will contain several
 entities upon completion of all the customizations:
@@ -62,14 +62,13 @@ Things to consider before you begin
 -   What are considered as best practices for managing changes in between
     environments (“Dev” to “Test” to “Prod”)?
 
--   What all entities a user might need in the scenario that we are building?
+-   What are entities a user might need in the scenario that we are building?
 
 -   What relationship behaviors would we consider enabling users to complete
     their tasks?
 
 -   Remember to work in your DEVELOPMENT environment with the customizations.
-    Once the customizations are completed, published and tested in “Dev”, and if
-    everything works fine, the same will be deployed to “Prod”.
+    Once the customizations are completed, published and tested in “Dev”, the same will be deployed to “Prod”.
 
 <br>Exercise \#1: Create Environments and Solution
 ==================================================
