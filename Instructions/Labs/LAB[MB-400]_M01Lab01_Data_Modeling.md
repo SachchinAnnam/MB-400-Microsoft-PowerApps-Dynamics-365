@@ -11,8 +11,7 @@ lab:
 Scenario
 ========
 
-A regional building department, issues and tracks permits for new buildings and
-updates for remodeling of existing buildings. Throughout this course you will
+A regional building department issues and tracks permits for new buildings and updates permits for building remodels. Throughout this course you will
 build applications and perform automation to enable the regional building
 department to manage the permitting process. This will be an end-to-end solution
 which will help you understand the overall process flow.
