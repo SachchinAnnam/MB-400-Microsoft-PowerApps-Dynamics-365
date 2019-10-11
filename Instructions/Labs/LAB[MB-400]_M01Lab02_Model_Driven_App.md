@@ -146,42 +146,42 @@ Task \#1: Edit Permit Form and View
 Task \#2: Edit Build Site Form and View
 ---------------------------------------
 
-1.  Open the Permit Management solution.
+1.  Confirm you are still in your Development environment.
 
-2.  Sign in to <https://make.powerapps.com>
+2.  Return to **Solutions**. 
 
-3.  While in your dev environment click to open the **Permit Management**
+3.  Click to open the **Permit Management**
     solution.
 
 4.  Edit the Build Site entity form.
 
-5.  Click to open the **Build Site** entity.
+- Click to open the **Build Site** entity.
 
-6.  Select the **Forms** tab and click to open the **Main** form.
+- Select the **Forms** tab and click to open the **Main** form.
 
-7.  Add **City**, **State/Province**, **Zip/Postal Code**, and **Country
+- Add **City**, **State/Province**, **Zip/Postal Code**, and **Country
     Region** fields to the form between **Street Address** and **Owner**.
 
-8.  Click **Save** and wait until the changes are saved.
+-  Click **Save** and wait until the changes are saved.
 
-9.  Click **Publish** and wait for the publishing to complete.
+-  Click **Publish** and wait for the publishing to complete.
 
-10. Click on the back button in the browser.
+- Click on the back button in the browser.
 
-11. Edit the Active Build Sites view.
+5. Edit the Active Build Sites view.
 
-12. Select the **Views** tab and click to open the **Active Build Sites** view.
+- Select the **Views** tab and click to open the **Active Build Sites** view.
 
-13. Add **City** and **Zip/Postal Code** to the view.
+- Add **City** and **Zip/Postal Code** to the view.
 
-14. Remove **Created On** from the view by selecting **Remove** from the options
+- Remove **Created On** from the view by selecting **Remove** from the options
     in field Chevron.
 
-15. Click **Save** and wait until the changes are saved.
+- Click **Save** and wait until the changes are saved.
 
-16. Click **Publish** and wait for the publishing to complete.
+- Click **Publish** and wait for the publishing to complete.
 
-17. Click on the browser back button.
+- Click on the browser back button.
 
 Task \#3: Edit Inspection Form and View
 ---------------------------------------
