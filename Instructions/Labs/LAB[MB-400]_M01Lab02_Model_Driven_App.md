@@ -186,7 +186,7 @@ Task \#2: Edit Build Site Form and View
 Task \#3: Edit Inspection Form and View
 ---------------------------------------
 
-1.  Sign in to <https://make.powerapps.com>
+1.  Sign in to <https://make.powerapps.com> if you are not already signed in.
 
 2.  While in your dev environment, select **Solutions** and click to open the
     **Permit Management** solution.
@@ -201,7 +201,7 @@ Task \#3: Edit Inspection Form and View
     should be added between **Name** and **Owner**, while **Comments** will be
     added after the **Owner** field.
 
-6.  Drag the **Status Reason** field **Comments** and drop it in the right side
+6.  Drag the **Status Reason** field and drop it in the right side
     of the form header.
 
 7.  Click **Save** and wait until the changes are saved.
@@ -211,7 +211,7 @@ Task \#3: Edit Inspection Form and View
 9.  Click on the back button in the browser.
 
 10. To edit the Active Inspections view, select the **Views** tab and click to
-    open the **Active Inspections Sites** view.
+    open the **Active Inspections** view.
 
 11. Add **Inspection Type, Scheduled Date** and **Sequence** to the view.
 
@@ -240,31 +240,29 @@ Task \#3: Edit Inspection Form and View
 21. Select **Sequence**.
 
 22. To filter the Inspector View, go to the view properties pane and click
-    **Edit Filter**. This will open a new pop-up on the right side of the
+    **Edit Filters**. This will open a new pop-up on the right side of the
     window.
 
 23. Click **Add** and select **Add Row**.
 
-24. Set the filter property by Selecting **Status Reason** in first dropdown and
-    **Pending** in the third dropdown**.** Now, click **Add** and select **Add
-    Row** again.
+24. Set the filter property by Selecting **Status Reason** in first dropdown and **Pending** in the third dropdown. The row should read "Status Reason Equals Pending." Now, click **Add** and select **Add Row** again.
 
-25. Select **Owner** field in the first dropdown and Equals current user in
+25. Select **Owner** field in the first dropdown and **Equals current user** in
     second dropdown and click **OK**.
 
 26. Click **Save** and wait until the changes are saved.
 
 27. Click **Publish** and wait for the publishing to complete.
 
-28. Once the changes are published, close the window and click **Done** on the
-    previous window for the PowerApps.
+28. Once the changes are published, close the tab and click **Done** on the
+    first tab for the PowerApps.
 
 Task \#4: Edit Permit Type Form
 -------------------------------
 
-1.  Sign in to <https://make.powerapps.com>
+1.  If you are not in the Inspections window, sign in to <https://make.powerapps.com>.
 
-2.  Select your **Dev environment.**
+2.  Select your **Dev environment** or confirm that you are currently in your Dev environment.
 
 3.  Select **Solutions**.
 
@@ -315,7 +313,7 @@ logical names.
 Task \#1: Create Application
 ----------------------------
 
-1.  Open the Permit Management solution.
+1.  Open the Permit Management solution if you are not already in it.
 
     -   Sign in to <https://make.powerapps.com>
 
@@ -324,14 +322,11 @@ Task \#1: Create Application
 
 2.  Create the Model-Driven Application
 
-    -   Click **New** and select **App \| Model-Drive App**. This will open a
-        new Window.
+    -   Click **New** and select **App** and then **Model-Drive App**. This will open a new tab.
 
     -   Enter **Permit Management** for Name and click **Done**.
 
-3.  Edit Sitemap
-
-    -   Click **Edit Site map.**
+3.  Click the pencil icon next to **Site Map.**
 
 4.  Edit the default titles
 
@@ -371,16 +366,13 @@ Task \#1: Create Application
 
     -   Go to the **Properties** pane.
 
-    -   Select **Entity** from the dropdown for **Type** and search for **Permit
-        Type** entity from the dropdown for **Entity**.
+    -   Select **Entity** from the dropdown for **Type** and search for **Permit Type** entity from the dropdown for **Entity**.
 
 8.  Add new Group to the sitemap
 
     -   Select the **Building Dept.** area and click **Add.**
 
     -   Click **Add** and select **Group**.
-
-    -   Select **Group**.
 
     -   Go to the **Properties** pane and enter **Contacts** for Title.
 
@@ -403,10 +395,9 @@ Task \#1: Create Application
 
     -   Go to the **Properties** pane.
 
-    -   Select **Entity** from the dropdown for **Type** and search for **Build
-        Site** entity in the dropdown for **Entity**.
+    -   Select **Entity** from the dropdown for **Type** and search for **Build Site** entity in the dropdown for **Entity**.
 
-11. Click **Save**, this will show the loading screen while the changes are
+11. Click **Save**. This will show the loading screen while the changes are
     getting saved.
 
 12. Click **Publish** to publish the sitemap and wait for the publishing to
@@ -420,18 +411,16 @@ Task \#1: Create Application
 15. Click **Save** to save the application.
 
 16. Click **Validate** to validate the changes done in the application. This
-    will show some warnings but we can ignore them, since we have not referenced
-    a specific View and Form for the entities and this will display all the
-    Views and Forms.
+    will show some warnings but we can ignore them, since we have not referenced a specific View and Form for the entities and this will display all the Views and Forms.
 
 17. Click **Publish** to publish the application and wait for the publishing to
     complete.
 
-18. Click **Save and Close to** close the app designer.
+18. Click **Save and Close** to close the app designer.
 
 19. Click **Done**.
 
-20. Now, Select the **Solutions** and select **Publish all Customizations.**
+20. Select **Solutions** and select **Publish all Customizations.**
 
 21. Select **Apps** and your application should now be listed in the Recent
     Apps.
@@ -441,8 +430,7 @@ Task \#2: Test Application
 
 1.  Start the application
 
-    -   Select **Apps** and click to open the **Permit Management** app in a new
-        window.
+    -   Select **Apps** and click to open the **Permit Management** app in a new window. (If you don't see your app at first, you may need to refresh your browser.)
 
     -   The application should start.
 
@@ -452,7 +440,7 @@ Task \#2: Test Application
 
     -   Click **New** from the top menu.
 
-    -   Provide **First Name as John** and **Last Name as Doe**.
+    -   Provide **First Name** as **John** and **Last Name** as **Doe**.
 
     -   Click **Save and Close**.
 
@@ -467,7 +455,7 @@ Task \#2: Test Application
     -   Provide **Street Address**, **City**, **State/Province**, **Zip/Postal
         Code**, and **Country/Region** as:
 
-        1.  Street Address: One Microsoft Way
+        1. Street Address: One Microsoft Way
 
         2.  City: Redmond  
             State/Province: WA
@@ -495,8 +483,7 @@ Task \#2: Test Application
 
     -   Click **New**.
 
-    -   Provide **Name** as **Test Permit**, select the **Permit Type**, **Build
-        Site**, and the **Contact** records you created in the previous steps.
+    -   Provide **Name** as **Test Permit**, select the **Permit Type**, **Build Site**, and the **Contact** records you created in the previous steps.
 
     -   Select a future date for the **Start Date** and click **Save**.
 
@@ -504,15 +491,12 @@ Task \#2: Test Application
 
     -   Go to the **Inspections** tab
 
-    -   Click **+ New Inspections**.
+    -   Click **+ New**.
 
-    -   Provide **Name** as **Framing Inspections**, select **Initial
-        Inspection** from the dropdown for **Inspection Type**, and select
+    -   Provide **Name** as **Framing Inspections**, select **Initial  Inspection** from the dropdown for **Inspection Type**, and select
         future date for **Scheduled Date**.
 
     -   Click **Save and Close.**
-
-    -   The **Inspection** record should now show up on the **Permit** sub-grid.
 
 7.  You may add more test records.
 
