@@ -10,21 +10,21 @@ lab:
 Scenario
 ========
 
-A regional building department, issues and tracks permits for new buildings and
-updates for remodeling of existing buildings. Throughout this course you will
+A regional building department issues and tracks permits for new buildings and
+tracks updates for remodeling of existing buildings. Throughout this course you will
 build applications and automation to enable the regional building department to
 manage the permitting process. This will be an end-to-end solution which will
 help you understand the overall process flow.
 
 In this lab we will continue to build on top of the components created in the
 previous module. We will now build a PowerApps model-driven app to allow the
-office staff manage records for the inspectors and the inspectors to manage
+office staff to manage records for the inspectors and to empower the inspectors to manage
 their own records as needed.
 
 High-level lab steps
 ======================
 
-As part of creating the model-driven app, you will complete the following
+As part of creating the model-driven app, you will complete the following:
 
 -   Create a new model-driven app named Permit Management
 
@@ -32,13 +32,14 @@ As part of creating the model-driven app, you will complete the following
 
 -   Customize the forms and views of the required entities for the app
 
-**Views**: As the name suggests, this help viewing the existing data in the form
-of table. This is the configuration of the fields that will be displayed on the
-screen.
+We will work with the following components:
 
-**Forms**: This is where, the user creates/updates new records in the entities.
+- **Views**: Views allow the user to display the existing data in the form
+of table.
 
-Both will be integrated to the Model driven app for a better user-experience.
+- **Forms**: This is where the user creates/updates new records in the entities.
+
+Both will be integrated to the model-driven app for a better user-experience.
 
 Things to consider before you begin
 -----------------------------------
@@ -62,9 +63,9 @@ custom created entities that will be used in the model-driven app.
 Task \#1: Edit Permit Form and View
 -----------------------------------
 
-1.  In your development environment, open the Permit Management solution.
+1.  Open your browser inside of your Virtual Machine.
 
-2.  Sign in to <https://make.powerapps.com>
+2.  Sign in to <https://make.powerapps.com> if you are not already signed in.
 
 3.  Select your **Dev environment.**
 
@@ -80,18 +81,17 @@ Task \#1: Edit Permit Form and View
 8.  Drag the **Permit Type** field to the form and place it below the **Name**
     field.
 
-9.  Add **Build Site** lookup, **Contact** lookup, **Start Date** and **New
-    Size** to the form. The form should now look like the image below.
+9.  Add **Build Site** lookup, **Contact** lookup, **Start Date** and **New Size** to the form. The form should now look like the image below.
 
 10. Drag the **Status Reason** field and drop it in the right side of the form
-    header.
+    header. (You may need to minimize the Properties pop-out on the right side of the screen to see the field on the form.)
 
 11. To add new tab for **Inspections** to the form, focus on the main body of
     the form (not in the header) click **Add Component**.
 
 12. Select **One Column Tab**.
 
-13. Go to the **Properties** pane, change the **Tab Label** to **Inspections**
+13. Go to the **Properties** pane on the right side, change the **Tab Label** to **Inspections**
     and the **Name** to **inspectionsTab**.
 
 14. To add a Sub-Grid to the Permit form, select the **Inspections** tab. Make
@@ -102,7 +102,7 @@ Task \#1: Edit Permit Form and View
 16. Scroll down and select **Subgrid,** this will open a pop-up to select
     Entity.
 
-17. Check the **Related Records** checkbox, select **Inspections** for
+17. Check the **Related Records** checkbox, select **Inspections (Permit)** for
     **Entity**, select Active **Inspections** for **Default View** and click
     **Done**.
 
