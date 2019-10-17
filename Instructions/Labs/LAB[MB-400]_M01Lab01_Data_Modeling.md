@@ -377,7 +377,7 @@ Task \#3: Create Build Site Entity and Fields
 
     -   Click **Done**.
 
-5.  Add Country Region field
+5.  Add Country/Region field
 
     -   Make sure you have the **Fields** tab selected and click **Add Field**.
 
