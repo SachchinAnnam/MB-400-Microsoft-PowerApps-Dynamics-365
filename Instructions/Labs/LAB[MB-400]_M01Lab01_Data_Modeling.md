@@ -511,7 +511,7 @@ Task \#5: Edit Status Reason Options
 
     -   Click **Add**.
 
-    -   Enter **Canceled** for **Label** and click **OK.**
+    -   Enter **Cancelled** for **Label** and click **OK.**
 
 8.  Your option-set should now have 5 options for the **Active** state.
 
@@ -538,11 +538,11 @@ Task \#5: Edit Status Reason Options
 
     -   Enter **Completed** for Label and click **OK**.
 
-13. Add the Canceled option
+13. Add the Cancelled option
 
     -   Click **Add**.
 
-    -   Enter **Canceled** for Label and click **OK**.
+    -   Enter **Cancelled** for Label and click **OK**.
 14. Add the Expired option
 
     -   Click **Add**.
