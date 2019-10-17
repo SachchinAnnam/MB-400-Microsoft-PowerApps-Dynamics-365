@@ -507,7 +507,7 @@ Task \#5: Edit Status Reason Options
 
     -   Enter **Failed** for **Label** and click **OK.**
 
-7.  Add the Canceled Option
+7.  Add the Cancelled Option
 
     -   Click **Add**.
 
