@@ -197,7 +197,7 @@ Task \#3: Add Inspection Gallery
 
     -   Select **Height** property and set it to the formula below.
 
-      ` Parent.Height - (MainHeader.Height\*2)`
+      ` Parent.Height - (MainHeader.Height*2)`
 
     -   Select the Y property from the dropdown and set it to formula below.
 
