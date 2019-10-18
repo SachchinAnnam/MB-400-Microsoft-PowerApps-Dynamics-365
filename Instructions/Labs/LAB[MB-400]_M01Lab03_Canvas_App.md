@@ -123,7 +123,7 @@ Task \#1: Create Canvas App
 
     -   Select the **Insert** tab.
 
-    -   Click **Components** and select **Header**.
+    -   Click **Custom** and select **Header**.
 
     -   Rename **Header_1** to **MainHeader** by double click on Header_1.
 
