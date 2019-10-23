@@ -193,7 +193,7 @@ Task \#1: Configure publishing to a web hook
 
     -   Select **WebhookKey** for **Authentication**.
 
-    -   Go back to the notepad and copy the key.
+    -   Go back to the notepad and copy the key. The key will be all the text after the **code=**.
 
     -   Go back to the **Plugin Registration** tool, paste the key you copied in
         the **Value** field and click **Save**.
@@ -203,14 +203,12 @@ Task \#1: Configure publishing to a web hook
     -   Select the **Web Hook** you registered, click **Register** and select
         **Register New Step**.
 
-    -   Select **Update** for **Message**, **contoso_permit** for **Primary
-        Entity**, and click **Filtering Attributes.**
+    -   Select **Update** for **Message**, **contoso_permit** for **Primary Entity**, and click the ellipses in **Filtering Attributes.**
 
     -   Uncheck all by selecting the checkbox, select **New Size** and click
         **OK**.
 
-    -   Select **Asynchronous** for **Execution Mode** and click **Register New
-        Step**.
+    -   Select **Asynchronous** for **Execution Mode** and click **Register New Step**.
 
 Task \#2: Test the Web Hook
 ---------------------------
