@@ -88,7 +88,7 @@ Task \#2: Create an Azure Function
 
 2.  Test the function
 
-    -  Click on the **Test** pane.
+    -  Click on the **Test** pane. (If you do not see the Test pane on the right side of the screen, you may need to minimize the left menu.)
 
     -  Click **Run**.
 
@@ -96,7 +96,7 @@ Task \#2: Create an Azure Function
 
 3.  Edit the function
 
-    -  Identify the following lines in the code and remove them. Do not remove any lines between the following lines.
+    -  Identify the following lines in the code and remove them. Do not remove any lines between the following:
 
 			string name = req.Query["name"];
 
@@ -131,7 +131,7 @@ Task \#2: Create an Azure Function
 
     -   Click **Copy** and the close the popup.
 
-    -   Save the **URL**, you will need it in the next exercise.
+    -   Save the **URL** - you will need it in the next exercise.
 
 Exercise \#2: Configure Web Hook
 ================================
