@@ -80,11 +80,11 @@ Task \#2: Create an Azure Function
    -  Select **All Resources**, search for the function application you
         created and open it.
 
-    -  Create new function by selecting the + icon.
+   -  Create new function by selecting the + icon.
 
-    -  Select **In-Portal** and click **Continue.**
+   -  Select **In-Portal** and click **Continue.**
 
-    -  Select **Webhook + API** and click **Create**.
+   -  Select **Webhook + API** and click **Create**.
 
 2.  Test the function
 
