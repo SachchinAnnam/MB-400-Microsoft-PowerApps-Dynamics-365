@@ -265,7 +265,7 @@ Task \#4: Add Inspection Details Screen
 
     -   Set the Item value to the formula below.
 
->   InspectionList.Selected
+               InspectionList.Selected
 
 1.  Edit InspectionForm fields. This adds the data cards for fields by default,
     but you can add/remove the data cards as:
