@@ -111,8 +111,8 @@ Task \#1: Install Microsoft PowerApps CLI and Prerequisites
     -   Select the **Developer Pack**.
 
     -   Click **Run**.
-
-Follow the steps in setup wizard to complete installing the **Developer Pack.**
+    
+    - Follow the steps in setup wizard to complete installing the **Developer Pack.**
 
 Task \#2: Setup Components Project
 ----------------------------------
@@ -128,17 +128,17 @@ Task \#2: Setup Components Project
     -   Run the command mentioned below to change directory. Replace **[Computer
         User Name]** with your OS user name.
 
-    cd C:\\Users\\[Computer User Name]\\Documents
+    		cd C:\\Users\\[Computer User Name]\\Documents
 
 	-   Run the command mentioned below to create a new folder with name
     **pcfTimelineControl**.
 
-    mkdir pcfTimelineControl
+    		mkdir pcfTimelineControl
 
 	-   Run the command mentioned below to switch to the **pcfTimelineControl**
     folder.
 
-cd pcfTimelineControl
+		cd pcfTimelineControl
 
 	-   Your command prompt should now look like the image below.
 
@@ -147,15 +147,15 @@ cd pcfTimelineControl
 
     -   Create a new folder with the name **src**, by running the command below.
 
-    mkdir src
+    		mkdir src
 
 -   Run the command below to switch to the **src** folder you just created.
 
-    cd src
+    		cd src
 
 -   Clear the screen by running the command below.
 
-    cls
+    		cls
 
 -   Your command prompt should now look like the image below.
 
@@ -168,40 +168,40 @@ cd pcfTimelineControl
         however, you can run this command anytime to ensure you are always up to
         date.
 
-    pac install latest
+    		pac install latest
 
 -   Initialize the component. This command will create a set of files that will
     implement a dataset component. You will customize these files as per your
     specific component as we continue.
 
-    pac pcf init --name timelinecontrol --namespace contoso --template dataset
+    		pac pcf init --name timelinecontrol --namespace contoso --template dataset
 
 -   Install dependencies by running **npm install** command in the Terminal
 
-    npm install
+    		npm install
 
 -   Wait for the dependency installation to complete.
 
 5.  Open the **src** folder in Visual Studio Code and review the generated
     resources.
 
-    -   Open the **src** folder in **Visual Studio Code**. For this to work,
+	-   Open the **src** folder in **Visual Studio Code**. For this to work,
         make sure that the Visual Studio Code is added to Path in Environment
         Variables.
 
-    code .
+    		code .
 
--   **Visual Studio Code** should start and it should open the **src** folder.
+	-   **Visual Studio Code** should start and it should open the **src** folder.
 
--   Expand the **timelinecontrol** folder.
+	-   Expand the **timelinecontrol** folder.
 
--   Open the **ControlManifest.Input** xml file and examine it.
+	-   Open the **ControlManifest.Input** xml file and examine it.
 
--   Open the **Index.ts** file and examine it.
+	-   Open the **Index.ts** file and examine it.
 
--   Expand the **generated** folder.
+	-   Expand the **generated** folder.
 
--   Open the **ManifestTypes** file and examine it.
+	-   Open the **ManifestTypes** file and examine it.
 
 6.  Open CLI in visual studio code.
 
@@ -222,7 +222,7 @@ cd pcfTimelineControl
 
     -   Run **npm build** in the terminal
 
-    npm run build
+    		npm run build
 
 -   You should now be able to see Out folder. Expand the out folder and review
     its content.
@@ -231,7 +231,7 @@ cd pcfTimelineControl
 
     -   Run **npm start** in the terminal
 
-    npm start
+    		npm start
 
 -   This should open the Test Environment in a browser window.
 
@@ -250,20 +250,20 @@ cd pcfTimelineControl
 
 10.  Create a new solution folder in the parent of the **src** folder
     **pcfTimelineControl** and switch to it.
+    
+-   Change directory to the **pcfTimelineControl** folder.
 
-    -   Change directory to the **pcfTimelineControl** folder.
-
-    cd ..
+    		cd ..
 
 -   You should now be in the **pcfTimelineControl** directory.
 
 -   Create a new folder with the name **solution**.
 
-    mkdir solution
+    		mkdir solution
 
 -   Switch to the solution directory.
 
-    cd solution
+    		cd solution
 
 -   You should now be in the solution directory.
 
@@ -272,22 +272,22 @@ cd pcfTimelineControl
     you are done with your development and ready to publish your component for
     others to use.
 
-    -   Create solution project with name and prefix contoso.
+-   Create solution project with name and prefix contoso.
 
-    pac solution init --publisher-name contoso --publisher-prefix contoso
+    		pac solution init --publisher-name contoso --publisher-prefix contoso
 
 -   Add component location to the solution. This creates a reference to include
     your component when the solution build command is run.
 
-    pac solution  add-reference --path ..\\src
+    		pac solution  add-reference --path ..\\src
 
 -   The project reference should be added successfully.
 
 12.  Build the solution
 
-    -   Make sure you are still in the solution folder.
+  -   Make sure you are still in the solution folder.
 
-    -   Build the project by running the command below.
+  -   Build the project by running the command below.
 
     msbuild /t:restore
 
@@ -300,7 +300,7 @@ Task \#3: Build the Basic Timeline
 
     -  Change directory to the **src** folder.
 
-    cd ..\\src
+    		cd ..\\src
 
 2.  Create **css** folder in the **timelinecontrol** folder and create
     **timelinecontrol.css** file in the **css** folder
