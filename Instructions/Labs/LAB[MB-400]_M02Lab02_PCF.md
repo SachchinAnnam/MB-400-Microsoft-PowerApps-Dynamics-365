@@ -67,22 +67,22 @@ Task \#1: Install Microsoft PowerApps CLI and Prerequisites
 
 1.  Install Node.js
 
-    1.  Navigate to <https://nodejs.org/en/>
+    -  Navigate to <https://nodejs.org/en/>
 
-    2.  Select the latest **LTS** version.
+    -  Select the latest **LTS** version.
 
-    3.  Click **Run**.
+    -  Click **Run**.
 
-    4.  Follow the steps in setup wizard to complete installing **Node.js**
+    -  Follow the steps in setup wizard to complete installing **Node.js**
 
 2.  Install .NET Framework 4.6.2 Developer Pack
 
-    1.  Navigate to
+    -  Navigate to
         <https://dotnet.microsoft.com/download/dotnet-framework/net462>
 
-    2.  Select the **Developer Pack**.
+    -  Select the **Developer Pack**.
 
-    3.  Click **Run**.
+    -  Click **Run**.
 
 Exercise \#1: Create the PCF Control
 ====================================
