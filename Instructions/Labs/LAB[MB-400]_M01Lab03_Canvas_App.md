@@ -138,7 +138,7 @@ Task \#1: Create Canvas App
 
     -   Change the **Width** vale of the **MainHeader** to the formula below.
 
-    >   Parent.Width
+               Parent.Width
 
 Task \#3: Add Inspection Gallery
 --------------------------------
@@ -229,7 +229,7 @@ Task \#4: Add Inspection Details Screen
     -   Select the **Text** property of the **DetailsHeader** and set it to
         formula below.
 
->   InspectionList.Selected.Name
+               InspectionList.Selected.Name
 
 1.  Add Form to the DetailsScreen.
 
@@ -356,7 +356,7 @@ Task \#4: Add Inspection Details Screen
 
     -   Change the **Mode** to the formula below.
 
->   TextMode.MultiLine
+               TextMode.MultiLine
 
 23.  Save your work.
 
@@ -393,7 +393,7 @@ Task \#5: Submit the Inspection Result
     -   Set the **OnSelect** property of the **InspectionList** to the formula
         below. Remove the already existing false expression.
 
->   Navigate(DetailsScreen, ScreenTransition.Cover)
+              Navigate(DetailsScreen, ScreenTransition.Cover)
 
 Task \#6: Test Application
 --------------------------
