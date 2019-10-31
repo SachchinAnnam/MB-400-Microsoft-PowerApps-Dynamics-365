@@ -57,13 +57,13 @@ Things to consider before you begin
 -   Remember to continue working in your DEVELOPMENT environment. We’ll move
     everything to production soon.
 
-Exercise \#1: Prepare and Load Resources
+Exercise #1: Prepare and Load Resources
 ========================================
 
 **Objective:** In this exercise, you will create, organize and load your
 JavaScript web resources.
 
-Task \#1: Use Visual Studio Code to Create Resources
+Task #1: Use Visual Studio Code to Create Resources
 ----------------------------------------------------
 
 In this task, you will set up a folder to contain the JavaScript web resource
@@ -100,23 +100,24 @@ files in this course.
     -   Add the below mentioned namespaces to the newly created
         **PermitFormFunctions** file.
 
-    if (typeof (ContosoPermit) == "undefined")
+            if (typeof (ContosoPermit) == "undefined")
     
-    {var ContosoPermit = {__namespace: true};}
+            {var ContosoPermit = {__namespace: true};}
+            
     
-    if (typeof (ContosoPermit.Scripts) == "undefined")
+            if (typeof (ContosoPermit.Scripts) == "undefined")
     
-    {ContosoPermit.Scripts = {__namespace: true};}
+            {ContosoPermit.Scripts = {__namespace: true};}
     
     -   Add the function mentioned below after adding the namespaces.
     
-    ContosoPermit.Scripts.PermitForm = {
+            ContosoPermit.Scripts.PermitForm = {
     
-    \__namespace: true
+                __namespace: true
     
-    }
+            }
 
-Task \#2: Add Event Handlers
+Task #2: Add Event Handlers
 ----------------------------
 
 In this task, you will create functions for the logic that you will be
@@ -127,21 +128,21 @@ tasks.
 1.  Add the function mentioned below to the **PermitFormFuntions** file inside
     the function created in Task 1.
 
-    handleOnLoad: function (executionContext) {
+        handleOnLoad: function (executionContext) {
     
-    console.log('on load - permit form');
+            console.log('on load - permit form');
     
-    },
+        },
 
-1.  Add the function mentioned below to the **PermitFormFuntions** file inside
+2.  Add the function mentioned below to the **PermitFormFuntions** file inside
     the function created in Task 1. Once this is done, Click File and **Save
     All**.
 
-    handleOnChangePermitType: function (executionContext) {
+         handleOnChangePermitType: function (executionContext) {
     
-    console.log('on change - permit type');
+            console.log('on change - permit type');
     
-    },
+         },
 
 Task \#3: Load Web Resources 
 -----------------------------
@@ -376,6 +377,187 @@ specific form events.
         complete.
 
 9.  **DO NOT** close the solution explorer.
+
+Exercise \#2: Show Hide Tabs
+============================
+
+**Objective:** In this exercise, you will create a script that will show/hide
+the inspections tab based on the permit type entity’s “required inspections”
+field value.
+
+Task \#1: Create Function 
+--------------------------
+
+1.  Create a function that will run when the Permit form loads and when the
+    Permit Type value changes
+
+    -  Go back to **Visual Studio Code**.
+
+    -  Add the function mentioned below to **PermitFormFuntions** inside the
+    function created in Step 1(d).
+
+        _handlePermitTypeSettings: function (executionContext) {
+
+             },
+
+2. Get form context from the execution context
+
+    - 	Add the script mentioned below inside _handlePermitTypeSettings function.
+    
+            var formContext = executionContext.getFormContext();  
+
+3. Get the Permit Type value from the form.
+
+    -   Add the script mentioned below inside the **_handlePermitTypeSettings function. 
+    
+    -   contoso_permittype is the logical name of this Permit Type field. You can verify this is in the entity metadata.
+    
+            var permitType = formContext.getAttribute("contoso_permittype").getValue();
+
+4. Check if the Permit Type has value.
+
+    - Add the script mentioned below inside the _handlePermitTypeSettings function. 
+    
+            if (permitType == null) {
+        
+            } else {
+            
+            }
+5. Hide the Inspections tab and return if Permit Type is null.
+    - Add the script below inside the _HandlePermitTypeSettings function.
+    
+    - inspectionsTab is the name of the Inspections Tab. This was configured while configuration of the Model Driven App in Lab 1, Module 2.
+    
+            Xrm.Page.ui.tabs.get("inspectionsTab").setVisible(false);
+            return;
+
+## Task #2: Get Inspection Type Record
+**Objective:** In this task, you will use web API to retrieve the permit type lookup record associated with the current permit record that is currently displayed in the form.
+
+1.	Get the Permit Type ID
+
+    -	Add the script mentioned below in the else statement of the _handlePermitTypeSettings function.
+    
+            var permitTypeID = permitType[0].id;
+
+2.	Retrieve the Permit Type record and show alert if there are errors
+
+    -	Add the script mentioned below in the else statement of the _handlePermitTypeSettings function. 
+    
+    -   contoso_pertmittype is the logical name of the Permit Type entity.
+    
+            Xrm.WebApi.retrieveRecord("contoso_permittype", permitTypeID).then(function (result) {
+
+            },
+            function (error) { alert('Error:' + error.message) });
+
+3.	Check if “Require Inspections” field value is true
+
+    - Add the script mentioned below in the retrieveRecord function call.  
+    
+    - contoso_requireinspections is the logical name of the Require Inspections field of the Permit Type entity.
+    
+            if (result.contoso_requireinspections) {
+                    
+            } else {
+                    
+            }
+
+4.	Make the Inspections tab visible if Require Inspections is true
+
+    - 	Add the script mentioned below in the if statement of the retrieveRecord call. 
+
+            Xrm.Page.ui.tabs.get("inspectionsTab").setVisible(true);
+
+5. Hide the Inspections tab if Require Inspections is not true 
+
+    - Add the script mentioned below in the else statement of the **retrieveRecord** call.
+    
+            Xrm.Page.ui.tabs.get("inspectionsTab").setVisible(false);
+ 
+ 8. Call the handlePermitTypeSettings function from the handleOnLoad function.
+ 
+    - Go to the handleOnLoad function and add the script mentioned below.
+    
+            ContosoPermit.Scripts.PermitForm._handlePermitTypeSettings(executionContext);
+          
+ 9. Call the handlePermitTypeSettings function from the handleOnChangePermitType function.
+ 
+    - Go to the **handleOnChangePermitType** function and add the script mentioned below.
+        
+            ContosoPermit.Scripts.PermitForm._handlePermitTypeSettings(executionContext);
+    
+    - Click **File** and **Save All.**
+    
+ 
+ ## Task #3: Load Updated Script
+ 
+1.	Open the Permit Form Script web resource
+
+    -	Go back to the solution explorer.
+    -   Select Web Resources.
+	-   Double click to open the Permit Form Script web resource.
+
+2.	Load the updated version of permitFormFuntion.jsPermitFormFuntion.js 
+
+    - Click **Browse**.
+
+    -  Select **PermitFormFunctions.js** and click **Open**.
+
+3.  Save and Publish your changes
+
+    -  Click **Save** and wait until the changes are saved.
+
+    -  Click **Publish** and wait for the publishing to complete.
+
+4.  **DO NOT** close this window. You will need to come back to this window in
+    the next exercise.
+    
+Task \#4: Test Your Changes 
+----------------------------
+
+1.  Start the Permit Management application
+
+    -  Sign in to <https://make.powerapps.com> and select your **Dev**
+        environment.
+
+   -  Select **Apps**.
+
+    -  Click to open the **Permit Management** application.
+
+2.  Open Permit record.
+
+    -  Select Permits from the Site Map.
+
+    -  Click to open a **Permit** record.
+
+3.  Check if the **Permit Type** field is empty and if it is, the
+    **Inspections** tab is hidden. In this case, the Permit Type is null.
+
+4.  Select Permit Type.
+
+    -  Click on the **Permit Type** lookup.
+
+    -  Select **New Construction**.
+
+    -  Check if the **Inspections** tab is still hidden. If so, in this case,
+        the Require Inspections field value is false/No
+
+5.  Set **Require Inspections** field value of the **Permit Type** to **Yes**.
+
+    -  Click on the selected **Permit Type**.
+
+    -  Set the **Require Inspections** to **Yes**.
+
+    -  Click **Save** button on the bottom right of the screen.
+
+    -  Click on the browser back button.
+
+6.  You should now be able to see the Inspections tab.
+
+    -  Select the **Inspections** tab.
+
+7.  The user should now be able to view/add inspections to the sub-grid.
 
 Exercise #3: Toggle Required property on the Fields
 ====================================================
@@ -390,30 +572,30 @@ previous exercise.
 Task #1: Create Function 
 --------------------------
 
-1.  Locate the \_handlePermitTypeSettings function
+1.  Locate the _handlePermitTypeSettings function
 
     -   Go back to **Visual Studio Code**.
 
-    -   Locate the \_**handlePermitTypeSettings** function.
+    -   Locate the _**handlePermitTypeSettings** function.
 
 2.  If permitType is null, remove the requirement and hide the “New Size” field.
 
     -   Add the script mentioned below in the **if permitType == null**
         statement. contoso_newsize is the logical name of the New Size field.
 
-    Xrm.Page.getAttribute("contoso_newsize").setRequiredLevel("none");
+            Xrm.Page.getAttribute("contoso_newsize").setRequiredLevel("none");
     
-    Xrm.Page.ui.controls.get("contoso_newsize").setVisible(false);
+             Xrm.Page.ui.controls.get("contoso_newsize").setVisible(false);
 
 3.  Check if “Require Size” field value of the Permit Type is set to Yes
 
     -   Add the script mentioned below inside the retrieveRecord function.
     
-    if (result.contoso_requiresize) {
+             if (result.contoso_requiresize) {
     
-    } else {
+            } else {
     
-    }
+            }
 
 4.  If “Require Size” field value of the Permit Type is set to Yes, make the
     “New Size” field visible and as required.
@@ -422,23 +604,23 @@ Task #1: Create Function
         statement. contoso_requiresize is the logical name of the Require Size
         field.
 
-    Xrm.Page.ui.controls.get("contoso_newsize").setVisible(true);
-    Xrm.Page.getAttribute("contoso_newsize").setRequiredLevel("required");
+            Xrm.Page.ui.controls.get("contoso_newsize").setVisible(true);
+            Xrm.Page.getAttribute("contoso_newsize").setRequiredLevel("required");
 
 5.  If Require Size field value of the Permit Type is not set to Yes, remove the
     “New Size” field not required and hide it.
 
     -   Add the script mentioned below inside the else statement.
 
-    Xrm.Page.getAttribute("contoso_newsize").setRequiredLevel("none");
-    Xrm.Page.ui.controls.get("contoso_newsize").setVisible(false);
+            Xrm.Page.getAttribute("contoso_newsize").setRequiredLevel("none");
+            Xrm.Page.ui.controls.get("contoso_newsize").setVisible(false);
 
 6.  The \_handlePermitTypeSettings function should now look like the image
     below.
 
 7.  Click **File** and **Save All**.
 
-Task \#2: Load Updated Script 
+Task #2: Load Updated Script 
 ------------------------------
 
 1.  Open the Permit Form Script web resource.
@@ -466,7 +648,7 @@ Task \#2: Load Updated Script
 
     -   Close the Web Resource editor.
 
-Task \#3: Test Your Changes 
+Task #3: Test Your Changes 
 ----------------------------
 
 1.  Start the Permit Management application
@@ -653,34 +835,34 @@ API.
 
     -   Add the function below.
 
-    >   \_lockPermitRequest : function (permitID, reason) {
+            \_lockPermitRequest : function (permitID, reason) {
     
-    >   },
+               },
     
-1.  Build entity and set reason.
+3.  Build entity and set reason.
 
     -   Add the script mentioned below inside the **\_lockPermitRequest**
         function.
 
-    this.entity = { entityType: "contoso_permit", id: permitID };
+            this.entity = { entityType: "contoso_permit", id: permitID };
     
-    this.Reason = reason;
+            this.Reason = reason;
 
-1.  Build and return the request
+4.  Build and return the request
 
     -   Add the script mentioned below in the **\_lockPermiRequest** function.
 
-    this.getMetadata = function () {
+            this.getMetadata = function () {
     
-    return {
+            return {
     
-    boundParameter: "entity", parameterTypes: {
+                boundParameter: "entity", parameterTypes: {
     
-    "entity": {
+                "entity": {
     
-    typeName: "mscrm.contoso_permit",
+            typeName: "mscrm.contoso_permit",
     
-    structuralProperty: 5
+            structuralProperty: 5
     
     },
     
