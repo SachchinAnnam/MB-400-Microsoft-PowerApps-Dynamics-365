@@ -4,7 +4,7 @@ lab:
     module: 'Module 02: Extending the Power Platform Common Data Service'
 ---
 
-#MB-400: Microsoft PowerApps + Dynamics 365 Developer
+# MB-400: Microsoft PowerApps + Dynamics 365 Developer
 ## Module 2, Lab 1 – Client scripting
 
 Scenario
