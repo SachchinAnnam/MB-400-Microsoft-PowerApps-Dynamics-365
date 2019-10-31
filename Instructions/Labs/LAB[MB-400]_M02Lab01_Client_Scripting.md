@@ -835,7 +835,7 @@ API.
 
     -   Add the function below.
 
-            \_lockPermitRequest : function (permitID, reason) {
+            _lockPermitRequest : function (permitID, reason) {
     
                },
     
@@ -850,96 +850,96 @@ API.
 
 4.  Build and return the request
 
-    -   Add the script mentioned below in the **\_lockPermiRequest** function.
+    -   Add the script mentioned below in the **_lockPermiRequest** function.
 
             this.getMetadata = function () {
     
-            return {
+            	return {
     
-                boundParameter: "entity", parameterTypes: {
+                	boundParameter: "entity", parameterTypes: {
     
-                "entity": {
+                	"entity": {
     
-            typeName: "mscrm.contoso_permit",
+            			typeName: "mscrm.contoso_permit",
     
-            structuralProperty: 5
+            			structuralProperty: 5
     
-    },
+    			},
     
-    "Reason": {
+    			"Reason": {
     
-    "typeName": "Edm.String",
+    				"typeName": "Edm.String",
     
-    "structuralProperty": 1 // Primitive Type
+    					"structuralProperty": 1 // Primitive Type
     
-    }
+   				 	}
     
-    },
+    				},
     
-    operationType: 0, // This is an action. Use '1' for functions and '2' for CRUD
+   			 operationType: 0, // This is an action. Use '1' for functions and '2' for CRUD
     
-    operationName: "contoso_LockPermit",
+   			 operationName: "contoso_LockPermit",
     
-    };
+    			};
     
-    };
+    		};
 
-1.  Add the function that will be called from the action button.
+5.  Add the function that will be called from the action button.
 
     -   Add the function mentioned below after the **\_lockPermitRequest**
         function.
 
-    lockPermit: function () {
+    		lockPermit: function () {
     
-    },
+    		},
 
-1.  Get Permit ID and call **\_lockPermitRequest**
+6.  Get Permit ID and call **\_lockPermitRequest**
 
     -   Get the id by adding the script mentioned below inside the
         **lockPermit** function.
 
-var PermitID = Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
+			var PermitID = Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
 
--   Call **\_lockPermitRequest**. We are hardcoding the reason “Admin Lock”
+	-   Call **\_lockPermitRequest**. We are hardcoding the reason “Admin Lock”
     
-    var lockPermitRequest = new
-    ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
+   	 var lockPermitRequest = new
+    	ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
 
-1.  Execute the request.
+7.  Execute the request.
 
     -   Add the script mentioned below inside the lockPermit function.
     
-    // Use the request object to execute the function
+    		// Use the request object to execute the function
     
-    Xrm.WebApi.online.execute(lockPermitRequest).then(
+   		 Xrm.WebApi.online.execute(lockPermitRequest).then(
     
-    function (result) {
+    			function (result) {
     
-    if (result.ok) {
+    				if (result.ok) {
     
-    console.log("Status: %s %s", result.status, result.statusText);
+    					console.log("Status: %s %s", result.status, result.statusText);
     
-    // perform other operations as required;
+    					// perform other operations as required;
     
-    Xrm.Page.ui.setFormNotification("Status " + result.status, "INFORMATION");
+   		 			Xrm.Page.ui.setFormNotification("Status " + result.status, "INFORMATION");
     
-    }
+    				}
     
-    },
+   			 },
     
-    function (error) {
+    			function (error) {
     
-    console.log(error.message);
+    				console.log(error.message);
     
-    // handle error conditions
+    				// handle error conditions
     
-    }
+    			}
     
-    );
+    		);
 
--   Click **File** and **Save All**.
+	-   Click **File** and **Save All**.
 
-1.  Load the update resource and publish.
+8.  Load the update resource and publish.
 
     -   Log on to <https://make.powerapps.com/> and make sure you have the
         **Dev** environment selected.
