@@ -491,6 +491,7 @@ Task \#1: Create Function
     
  
  ## Task #3: Load Updated Script
+ ----------------------------------
  
 1.	Open the Permit Form Script web resource
 
@@ -850,7 +851,7 @@ API.
 
 4.  Build and return the request
 
-    -   Add the script mentioned below in the **_lockPermiRequest** function.
+    -   Add the script mentioned below in the **lockPermitRequest** function.
 
             this.getMetadata = function () {
     
@@ -871,18 +872,12 @@ API.
     				"typeName": "Edm.String",
     
     					"structuralProperty": 1 // Primitive Type
-    
    				 	}
-    
     				},
-    
-   			 operationType: 0, // This is an action. Use '1' for functions and '2' for CRUD
-    
-   			 operationName: "contoso_LockPermit",
-    
+   				 operationType: 0, // This is an action. Use '1' for functions and '2' for CRUD
+   				 operationName: "contoso_LockPermit",
+    				};
     			};
-    
-    		};
 
 5.  Add the function that will be called from the action button.
 
