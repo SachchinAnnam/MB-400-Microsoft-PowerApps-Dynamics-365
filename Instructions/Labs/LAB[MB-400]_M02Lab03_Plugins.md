@@ -112,11 +112,13 @@ Task \#1: Create the plugin
     class **public**, and inherit from **PuginBase**
 
     -  Add the using statement below to the **PreOperationPermitCreate** class.
-
+    
+```
     using Microsoft.Xrm.Sdk;
     
     using Microsoft.Xrm.Sdk.Query;  
     using ContosoPackagePoject;
+```
 
 6.  Make the **PreOperationPermitCreate** public and **inherit** from
     **PluginBase**.
@@ -126,7 +128,7 @@ Task \#1: Create the plugin
 
     -  To override the **ExecuteCDSPlugin** method, add the code below to the
         **PreOperationPermitCreate** method.
-
+```
     protected override void ExecuteCDSPlugin(LocalPluginContext localcontext)
     
     {
@@ -134,30 +136,30 @@ Task \#1: Create the plugin
     base.ExecuteCDSPlugin(localcontext);
     
     }
-
+```
 8.  To get the **Target** entity, add the code below inside the ExecuteCDSPlugin
     method.
-
+```
     var permitEntity = localcontext.PluginExecutionContext.InputParameters["Target"]
     as Entity;
-
+```
 9.  To get the Build Site entity reference, add the below code after
     **permitEntity** variable definition.
-
+```
     var buildSiteRef = permitEntity["contoso_buildsite"] as EntityReference;
-
+```
 10.  To add Trace Messages, add the below mentioned code after **buildSiteRef**
     variable definition.
-
+```
     localcontext.Trace("Primary Entity Id: " + permitEntity.Id);
     
     localcontext.Trace("Build Site Entity Id: " + buildSiteRef.Id);
-
+```
 11.  Create Fetch xml and that will get the count of locked permits matching the
     build site id and call retrieve multiple.
 
-    -  Create the **FetchXML** string.
-
+   -  Create the **FetchXML** string.
+```
     string fetchString = "\<fetch output-format='xml-platform' distinct='false'
     version='1.0' mapping='logical' aggregate='true'\>\<entity
     name='contoso_permit'\>\<attribute name='contoso_permitid' alias='Count'
@@ -165,25 +167,30 @@ Task \#1: Create the plugin
     attribute='contoso_buildsite' uitype='contoso_buildsite' operator='eq' value='{"
     + buildSiteRef.Id + "}'/\>\<condition attribute='statuscode' operator='eq'
     value='463270000'/\>\</filter\>\</entity\>\</fetch\>";
+```
 
 12.  Call RetrieveMultiple and add Trace Message.
 
+```
     localcontext.Trace("Calling RetrieveMultiple for locked permits");
     
     var response = localcontext.OrganizationService.RetrieveMultiple(new
     FetchExpression(fetchString));
+```
 
 13.  Get the locked Permit Count and throw InvalidPluginExecutionException if the
     **Count** is more than 0
 
-    -  Get the locker permits **Count**.
-
+   -  Get the locker permits **Count**.
+```
     int lockedPermitCount =
     (int)((AliasedValue)response.Entities[0]["Count"]).Value;
+```
 
 14.  Add Trace Message, check if the **Count** is more than **0** and throw
     **InvalidPluginExecutionException** if it is more than **0**.
     
+  ```  
     localcontext.Trace("Locket Permit count : " + lockedPermitCount);
     
     if (lockedPermitCount \> 0)
@@ -194,7 +201,8 @@ Task \#1: Create the plugin
     site");
     
     }
-    
+ ```
+ 
 15.  Build the project and make sure it succeeds. To build the project, right
     click on the project and select **Build**. Check the output and make sure
     that the build is succeeded. If it does not, go back and review your work
@@ -267,8 +275,8 @@ Task \#2: Deploy the plugin
     -  Browse to the bin/**debug** folder of your plugin project
         (**ContosoPackageProject**), select the **ContosoPackageProject**.dll
         file and click **Open**.  
-        **Path:**
-        PathToFolder/ContosoPackageProject/ContosoPackageProject/bin/Debug
+        
+			**Path:** PathToFolder/ContosoPackageProject/ContosoPackageProject/bin/Debug
 
     -  Click **Register Selected Plugins**.
 
@@ -315,7 +323,7 @@ Task \#1: Add a new plugin to the project
 
     -  Add the using statement below to the **LockPermitCancelInspections**
         class.
-
+```
     using Microsoft.Xrm.Sdk;
     
     using System.Text.RegularExpressions;
@@ -323,7 +331,7 @@ Task \#1: Add a new plugin to the project
     using ContosoPackagePoject;
     
     using Microsoft.Xrm.Sdk.Query;
-
+```
 3.  Make the **LockPermitCancelInspections** public and **inherit** from
     **PluginBase**.
 
@@ -332,7 +340,7 @@ Task \#1: Add a new plugin to the project
 
     -  Override the **ExecuteCDSPlugin** method. Add the code below inside the
         **LockPermitCancelInspections** method.
-    
+  ```  
     protected override void ExecuteCDSPlugin(LocalPluginContext localcontext)
     
     {
@@ -340,33 +348,33 @@ Task \#1: Add a new plugin to the project
     base.ExecuteCDSPlugin(localcontext);
     
     }
-
+```
 5.  Get the target entity reference, entity, set status reason to lock, and
     update the permit record.
 
     -  Get the target **Entity Reference** and **Entity**.
-
+```
     var permitEntityRef =
     localcontext.PluginExecutionContext.InputParameters["Target"] as
     EntityReference;
     
     Entity permitEntity = new Entity(permitEntityRef.LogicalName,
     permitEntityRef.Id);
-    
+ ```   
 6.  Add **Trace** message and Set the **Status Reason** to **Lock**. 463270000
     is the lock value of the Status Reason option-set and statuscode is the name
     of the status reason field.
-
+```
     localcontext.Trace("Updating Permit Id : " + permitEntityRef.Id);
     
     permitEntity["statuscode"] = new OptionSetValue(463270000);
-
+```
 7.  Update the **Permit** record and add **Trace** message.
-
+```
     localcontext.OrganizationService.Update(permitEntity);
     
     localcontext.Trace("Updated Permit Id " + permitEntityRef.Id);
-
+```
 Task \#2: Get Related Inspections and Cancel
 --------------------------------------------
 
@@ -374,15 +382,15 @@ Task \#2: Get Related Inspections and Cancel
 
     -  Create the **QueryExpression**. Add the code below to the
         **ExecuteCDSPlugin** method.
-
+```
     QueryExpression qe = new QueryExpression();
     
     qe.EntityName = "contoso_inspection";
     
     qe.ColumnSet = new ColumnSet("statuscode");
-
+```
 2.  Create the **ConditionExpression**.
-
+```
     ConditionExpression condition = new ConditionExpression();
     
     condition.Operator = ConditionOperator.Equal;
@@ -390,20 +398,20 @@ Task \#2: Get Related Inspections and Cancel
     condition.AttributeName = "contoso_permit";
     
     condition.Values.Add(permitEntityRef.Id);
-
+```
 3.  Set the **Criteria** of the query.
-
+```
     qe.Criteria = new FilterExpression(LogicalOperator.And);
-
+```
 4.  Add the **ConditionExpression** to the **Criteria** of the
     **QueryExpression**.
-
+```
     qe.Criteria.Conditions.Add(condition);
-
+```
 5.  Retrieve the inspections and iterate through the returned entities.
 
     -  Retrieve the **Inspections** and add **Trace** messages.
-
+```
     localcontext.Trace("Retrieving inspections for Permit Id " +
     permitEntityRef.Id);
     
@@ -411,10 +419,10 @@ Task \#2: Get Related Inspections and Cancel
     
     localcontext.Trace("Retrievied " + inspectionsResult.TotalRecordCount + "
     inspection records");
-
+```
 6.  Create a **variable** that will keep track of the canceled **Inspections**
     count and Iterate through the returned entities.
-
+```
     int canceledInspectionsCount = 0;
     
     foreach (var inspection in inspectionsResult.Entities)
@@ -422,19 +430,19 @@ Task \#2: Get Related Inspections and Cancel
     {
     
     }
-
+```
 7.  Retrieve the selected status reason option and check if it is set to new
     request or pending.
 
     -  Get the currently selected value of the **Status Reason** option-set.
         Add the code below inside the **foreach** loop.
-
+```
     var currentValue = inspection.GetAttributeValue\<OptionSetValue\>("statuscode");
-
+```
 8.  Check if the selected option is **New Request** or **Pending** and increment
     the count. 1 is the value of the New Request option and 463270000 id the
     value of the Pending option. This should be placed inside the foreach loop.
-    
+```  
     if (currentValue.Value == 1 \|\| currentValue.Value == 463270000)
     
     {
@@ -442,7 +450,7 @@ Task \#2: Get Related Inspections and Cancel
     canceledInspectionsCount++;
     
     }
-    
+  ```  
 9.  Cancel the inspections that are pending or new request
 
     -  Set the **Status Reason** selected value to **Canceled**. Add the code
@@ -450,16 +458,17 @@ Task \#2: Get Related Inspections and Cancel
         463270003 is the value for **Canceled Status Reason** in the
         **Inspections** entity. If this differs, please update the value with
         actual value for **Canceled Status Reason**.
-
+```
     inspection["statuscode"] = new OptionSetValue(463270003);
-
+```
 10.  Update the **Inspection** and add **Trace** messages.
-
+```
     localcontext.Trace("Canceling inspection Id : " + inspection.Id);
     
     localcontext.OrganizationService.Update(inspection);
     
     localcontext.Trace("Canceled inspection Id : " + inspection.Id);
+```
 
 Task \#3: Set Output Parameter and Create Note Record
 -----------------------------------------------------
@@ -469,33 +478,36 @@ Task \#3: Set Output Parameter and Create Note Record
 
     -  Check if at least one **Inspection** was canceled. Add the code below
         after the **foreach** loop.
-
+```
     if (canceledInspectionsCount \> 0)
     
     {
     
     }
+```
 
 2.  Set the **CanceledInspectionsCount** output parameter. Add the code below
     inside the if statement outside the foreach loop.
-
+```
     localcontext.PluginExecutionContext.OutputParameters["CanceledInspectionsCount"]
     = canceledInspectionsCount + " Inspections were canceled";
+```
 
 3.  Check if the Input Parameters contain Reason and Create the Note record.
 
     -  Check if **Reason** contains in the **InputParameters**. Add the code
         below after the last if statement.
-
+```
     if (localcontext.PluginExecutionContext.InputParameters.ContainsKey("Reason"))
     
     {
     
     }
+```
 
 4.  Build the **Note** record and add **Trace Message**. Add the code below
     inside the if statement.
-
+```
     localcontext.Trace("building a note reocord");
     
     Entity note = new Entity("annotation");
@@ -508,18 +520,21 @@ Task \#3: Set Output Parameter and Create Note Record
     note["objectid"] = permitEntityRef;
     
     note["objecttypecode"] = permitEntityRef.LogicalName;
-    
-5.  Add Trace Message and create the Note record.
+```
 
+5.  Add Trace Message and create the Note record.
+```
     localcontext.Trace("Creating a note reocord");
     
     var createdNoteId = localcontext.OrganizationService.Create(note);
-    
-    1.  Check if the Note record was created and add Trace Message.
-    
+ ```   
+-  Check if the Note record was created and add Trace Message.
+
+ ```   
     if (createdNoteId != Guid.Empty)
     
     localcontext.Trace("Note record was created");
+```
 
 6.  Build plugin by right click on the project and select **Build** and make
     sure the build succeeds.
@@ -712,11 +727,11 @@ Task \#1: Plugin Trace Log
 
 2.  Open the log and see what was logged.
 
-	- Click 1.  to open the Lock Permit log.
+- Click 1.  to open the Lock Permit log.
 
-	- Scroll down to the Execution section.
+- Scroll down to the Execution section.
 
-	-  Examine your Trace messages.
+-  Examine your Trace messages.
 
 Task \#2: Debugging Plugins (Optional)
 --------------------------------------
