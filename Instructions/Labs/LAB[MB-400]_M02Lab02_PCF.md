@@ -448,15 +448,18 @@ file loaded into the test harness.
 3.  Add the timeline data array property inside the **export** class
     timelinecontrol function and below the **\_timelineElm** definition.
 
-   		 private _timelineData : TimelineData[] = [];
+```
+   	 private _timelineData : TimelineData[] = [];
+```
 
 4.  Add a method that will create the timeline data.
 
     -  Add the method mentioned below after the **render** method.
-```
-        	private createTimelineData(gridParam: DataSet) {
     
-            	this._timelineData = [];
+```
+        private createTimelineData(gridParam: DataSet) {
+    
+            this._timelineData = [];
     
             	if (gridParam.sortedRecordIds.length \> 0) {
     
@@ -497,8 +500,9 @@ file loaded into the test harness.
     
            	 }
     
-        	}
+        }
 ```
+
 5.  Call the createTimelineData method from the updateView method.
 
     -  Go to the **updateView** method.
