@@ -851,8 +851,6 @@ API.
 
 4.  Build and return the request
 
-    -   Add the script mentioned below in the **lockPermitRequest** function.
-
             this.getMetadata = function () {
     
             	return {
@@ -872,15 +870,18 @@ API.
     				"typeName": "Edm.String",
     
     					"structuralProperty": 1 //Primitive Type
-   				 }
+   				 	}
 				 
-    			},
+    				},
 				
-   			operationType: 0, //This is an action. Use '1' for functions and '2' for CRUD
-   			operationName: "contoso_LockPermit",
+   				operationType: 0, //This is an action. Use '1' for functions and '2' for CRUD
+   				operationName: "contoso_LockPermit",
 				 
+    				};
     			};
-    		};
+			
+    -   Add the script mentioned below in the **lockPermitRequest** function.
+
 
 5.  Add the function that will be called from the action button.
 
