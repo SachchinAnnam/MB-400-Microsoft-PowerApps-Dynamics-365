@@ -895,14 +895,14 @@ API.
 
 -   Call **\_lockPermitRequest**. We are hardcoding the reason “Admin Lock”
     
-   	 		var lockPermitRequest = new
-    			ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
+   	 			var lockPermitRequest = new
+    				ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
 
 -   Add the script mentioned below inside the lockPermit function.
     
-    		// Use the request object to execute the function
+    			// Use the request object to execute the function
     
-   		 Xrm.WebApi.online.execute(lockPermitRequest).then(
+   		 	Xrm.WebApi.online.execute(lockPermitRequest).then(
     
     			function (result) {
     
@@ -912,11 +912,11 @@ API.
     
     					// perform other operations as required;
     
-   		 			Xrm.Page.ui.setFormNotification("Status " + result.status, "INFORMATION");
+   		 				Xrm.Page.ui.setFormNotification("Status " + result.status, "INFORMATION");
     
-    				}
+    					}
     
-   			 },
+   			 	},
     
     			function (error) {
     
