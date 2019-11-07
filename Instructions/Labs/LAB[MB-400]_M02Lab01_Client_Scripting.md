@@ -881,30 +881,24 @@ API.
 		
 		};
 
-5.  Add the function that will be called from the action button.
-
-    -   Add the function mentioned below after the **\_lockPermitRequest**
+ -   Add the function mentioned below after the **\_lockPermitRequest**
         function.
 
     		lockPermit: function () {
     
     		},
 
-6.  Get Permit ID and call **\_lockPermitRequest**
-
-    -   Get the id by adding the script mentioned below inside the
+-   Get the id by adding the script mentioned below inside the
         **lockPermit** function.
 
 			var PermitID = Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
 
-	-   Call **\_lockPermitRequest**. We are hardcoding the reason “Admin Lock”
+-   Call **\_lockPermitRequest**. We are hardcoding the reason “Admin Lock”
     
-   	 	var lockPermitRequest = new
-    		ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
+   	 		var lockPermitRequest = new
+    			ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
 
-7.  Execute the request.
-
-    -   Add the script mentioned below inside the lockPermit function.
+-   Add the script mentioned below inside the lockPermit function.
     
     		// Use the request object to execute the function
     
@@ -934,31 +928,29 @@ API.
     
     		);
 
-	-   Click **File** and **Save All**.
+-   Click **File** and **Save All**.
 
-8.  Load the update resource and publish.
-
-    -   Log on to <https://make.powerapps.com/> and make sure you have the
+ -   Log on to <https://make.powerapps.com/> and make sure you have the
         **Dev** environment selected.
 
-    -   Select **Solutions** and click to open the **Permit Management**
+-   Select **Solutions** and click to open the **Permit Management**
         solution.
 
-    -   Click to open the **Permit Form Scripts** web resource. This will open a
+-   Click to open the **Permit Form Scripts** web resource. This will open a
         New Browser window.
 
-    -   Click **Browse**.
+ -   Click **Browse**.
 
-    -   Select the **PermitFormFunctions.js** you updated and click **Open**.
+ -   Select the **PermitFormFunctions.js** you updated and click **Open**.
 
-    -   Click **Save** and wait until the changes are saved.
+-   Click **Save** and wait until the changes are saved.
 
-    -   Click **Publish All Customizations** and wait for the publishing to
+ -   Click **Publish All Customizations** and wait for the publishing to
         complete.
 
-    -   Close the web resource editor and return to the Solutions window.
+-   Close the web resource editor and return to the Solutions window.
 
-    -   Click **Done**.
+ -   Click **Done**.
 
 Task \#4: Add Button to Ribbon
 ------------------------------
