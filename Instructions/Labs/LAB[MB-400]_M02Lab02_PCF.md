@@ -56,43 +56,6 @@ Framework control using the PowerApps CLI
 Task \#1: Install Microsoft PowerApps CLI and Prerequisites
 -----------------------------------------------------------
 
-Exercise \#1: Create the PCF Control
-====================================
-
-**Objective:** In this exercise, you will create a PowerApps Components
-Framework control using the PowerApps CLI
-
-Task \#1: Install Microsoft PowerApps CLI and Prerequisites
------------------------------------------------------------
-
-1.  Install Node.js
-
-    -  Navigate to <https://nodejs.org/en/>
-
-    -  Select the latest **LTS** version.
-
-    -  Click **Run**.
-
-    -  Follow the steps in setup wizard to complete installing **Node.js**
-
-2.  Install .NET Framework 4.6.2 Developer Pack
-
-    -  Navigate to
-        <https://dotnet.microsoft.com/download/dotnet-framework/net462>
-
-    -  Select the **Developer Pack**.
-
-    -  Click **Run**.
-
-Exercise \#1: Create the PCF Control
-====================================
-
-**Objective:** In this exercise, you will create a PowerApps Components
-Framework control using the PowerApps CLI
-
-Task \#1: Install Microsoft PowerApps CLI and Prerequisites
------------------------------------------------------------
-
 1.  Install Node.js
 
     -   Navigate to <https://nodejs.org/en/>
