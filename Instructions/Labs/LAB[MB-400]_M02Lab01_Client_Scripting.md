@@ -851,7 +851,7 @@ API.
 
   -   Add the script mentioned below in the **lockPermitRequest** function.
 
-		this.getMetadata = function () {
+			this.getMetadata = function () {
 	
 			return {
 		
