@@ -341,8 +341,7 @@ Task \#3: Build the Basic Timeline
 
     -  Open the **Index.ts** file.
 
-    -  Add the properties below, inside the **export** class timelinecontrol
-        function.
+    -  Add the properties below, inside the **export** class timelinecontrol function.
 
         	private \_timelineElm: HTMLDivElement;
     
@@ -367,9 +366,7 @@ Task \#3: Build the Basic Timeline
 
    -  Add the function below.
 
-        private renderTimeline(): void {
-    
-            // Create a DataSet (allows two way data-binding)
+        	private renderTimeline(): void {    // Create a DataSet (allows two way data-binding)
     
             var items = new vis.DataSet([
     
@@ -457,42 +454,42 @@ file loaded into the test harness.
 
     		class TimelineData {
     
-        	id: string;
+        		id: string;
     
-        	content: string;
+        		content: string;
     
-        	start: string;
+        		start: string;
     
-        	className: string;
+        		className: string;
     
-        	constructor(id: string, content: string, start: string, className: string) {
+        		constructor(id: string, content: string, start: string, className: string) {
     
-            		this.id = id;
+            			this.id = id;
     
-            		this.content = content;
+            			this.content = content;
     
-           		this.start = start;
+           			this.start = start;
     
-            		this.className = className;
+            			this.className = className;
     
-        	}
+        		}
     
-    		}
+    			}
 
 3.  Add the timeline data array property inside the **export** class
     timelinecontrol function and below the **\_timelineElm** definition.
 
-   	 private _timelineData : TimelineData[] = [];
+   		 private _timelineData : TimelineData[] = [];
 
 4.  Add a method that will create the timeline data.
 
     -  Add the method mentioned below after the **render** method.
 
-        	private createTimelineData(gridParam: DataSet) {
+        		private createTimelineData(gridParam: DataSet) {
     
-            this._timelineData = [];
+            	this._timelineData = [];
     
-            if (gridParam.sortedRecordIds.length \> 0) {
+            	if (gridParam.sortedRecordIds.length \> 0) {
     
                 for (let currentRecordId of gridParam.sortedRecordIds) {
     
