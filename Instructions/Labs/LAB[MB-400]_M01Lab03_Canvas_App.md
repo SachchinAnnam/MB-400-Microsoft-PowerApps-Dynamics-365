@@ -184,7 +184,7 @@ Task \#3: Add Inspection Gallery
 
     -   Change the Text property of the control to the formula below.
 
-        `DateValue(Text(ThisItem.'Scheduled Date'),"en")`
+            DateValue(Text(ThisItem.'Scheduled Date'),"en")`
 
 6.  Resize the Gallery
 
@@ -193,19 +193,19 @@ Task \#3: Add Inspection Gallery
     -   Select **Width** property from the formula dropdown and enter the
         formula below.
 
-        `Parent.Width`
+            Parent.Width`
 
     -   Select **Height** property and set it to the formula below.
 
-      ` Parent.Height - (MainHeader.Height*2)`
+            Parent.Height - (MainHeader.Height*2)`
 
     -   Select the Y property from the dropdown and set it to formula below.
 
-       ` MainHeader.Height`
+             MainHeader.Height`
 
     -   Select the X property from the dropdown and set it to formula below.
 
-        `MainHeader.X`
+            MainHeader.X`
 
 Task \#4: Add Inspection Details Screen
 ---------------------------------------
@@ -326,7 +326,7 @@ Task \#4: Add Inspection Details Screen
 19. Search for DisplayMode property and remove the existing formula and place
     the following:
 
-    DisplayMode.View
+                DisplayMode.View
 
 20. Close the **Fields** pane.
 
@@ -384,7 +384,7 @@ Task \#5: Submit the Inspection Result
         Remove the false expression and update it. This formula will submit the
         form and then navigate back to the MainScreen.
 
->   SubmitForm(InspectionForm);Back(ScreenTransition.UnCoverRight)
+              SubmitForm(InspectionForm);Back(ScreenTransition.UnCoverRight)
 
 3.  Add navigation from the main screen to the details screen.
 
