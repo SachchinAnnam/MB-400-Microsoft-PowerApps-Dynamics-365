@@ -455,6 +455,7 @@ file loaded into the test harness.
     -  Open the **index.ts** file.
 
     -  Paste the code below after the **type DataSet** line.
+    
 ```
     		class TimelineData {
     
@@ -480,6 +481,7 @@ file loaded into the test harness.
     
     			}
 ```
+
 3.  Add the timeline data array property inside the **export** class
     timelinecontrol function and below the **\_timelineElm** definition.
 
