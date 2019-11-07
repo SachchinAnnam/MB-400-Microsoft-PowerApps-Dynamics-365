@@ -881,24 +881,24 @@ API.
 		
 		};
 
- -   Add the function mentioned below after the **\_lockPermitRequest**
+5.   Add the function mentioned below after the **\_lockPermitRequest**
         function.
 
     		lockPermit: function () {
     
     		},
 
--   Get the id by adding the script mentioned below inside the
+6.   Get the id by adding the script mentioned below inside the
         **lockPermit** function.
 
 			var PermitID = Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
 
--   Call **\_lockPermitRequest**. We are hardcoding the reason “Admin Lock”
+7.   Call **\_lockPermitRequest**. We are hardcoding the reason “Admin Lock”
     
    	 			var lockPermitRequest = new
     				ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
 
--   Add the script mentioned below inside the lockPermit function.
+8.   Add the script mentioned below inside the lockPermit function.
     
     			// Use the request object to execute the function
     
@@ -930,7 +930,7 @@ API.
 
 -   Click **File** and **Save All**.
 
- -   Log on to <https://make.powerapps.com/> and make sure you have the
+-   Log on to <https://make.powerapps.com/> and make sure you have the
         **Dev** environment selected.
 
 -   Select **Solutions** and click to open the **Permit Management**
