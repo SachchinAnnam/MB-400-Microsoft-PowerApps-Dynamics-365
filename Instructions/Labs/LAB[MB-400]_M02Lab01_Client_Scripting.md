@@ -874,8 +874,8 @@ API.
 				 
     				},
 				
-   				`operationType: 0, //This is an action. Use '1' for functions and '2' for CRUD
-   				`operationName: "contoso_LockPermit",
+   					operationType: 0, //This is an action. Use '1' for functions and '2' for CRUD
+   					operationName: "contoso_LockPermit",
 				 
     				};
     			};
