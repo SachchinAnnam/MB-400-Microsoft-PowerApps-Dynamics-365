@@ -138,14 +138,12 @@ Task \#2: Setup Components Project
 	-   Run the command mentioned below to switch to the **pcfTimelineControl**
     folder.
 
-		cd pcfTimelineControl
-
-	-   Your command prompt should now look like the image below.
+			cd pcfTimelineControl
 
 3.  Create a new folder in the **pcfTimelineControl** folder, name it **src**,
     and work in that directory
 
-    -   Create a new folder with the name **src**, by running the command below.
+-   Create a new folder with the name **src**, by running the command below.
 
     		mkdir src
 
@@ -156,8 +154,6 @@ Task \#2: Setup Components Project
 -   Clear the screen by running the command below.
 
     		cls
-
--   Your command prompt should now look like the image below.
 
 4.  Install the latest PowerApps CLI, create a solution project with the **name
     timelinecontrol**, **namespace contoso**, and **template dataset**.
@@ -331,7 +327,7 @@ Task \#3: Build the Basic Timeline
 
     -  Run the command mentioned below and wait for the build to complete.
 
-    npm install vis-timeline
+    		npm install vis-timeline
 
 6.  Add the vis-timeline css as a resource
 
@@ -339,8 +335,7 @@ Task \#3: Build the Basic Timeline
 
     -  Add the vis-timeline css inside the resources tag.
 
-    \<css path="..\\node_modules\\vis-timeline\\dist\\vis-timeline-graph2d.min.css"
-    order="1" /\>
+    		<css path="..\\node_modules\\vis-timeline\\dist\\vis-timeline-graph2d.min.css" order="1" /\>
 
 7.  Add timeline element and visual properties to the Index file
 
@@ -349,13 +344,13 @@ Task \#3: Build the Basic Timeline
     -  Add the properties below, inside the **export** class timelinecontrol
         function.
 
-        private \_timelineElm: HTMLDivElement;
+        	private \_timelineElm: HTMLDivElement;
     
-        private \_timelineVis : any;
+        	private \_timelineVis : any;
 
 8.  Add the below constant after the import lines on the top.
 
-    const vis = require('vis-timeline');
+    		const vis = require('vis-timeline');
 
 9.  Build the timeline element as div and added it to container element as a
     child.
@@ -364,13 +359,13 @@ Task \#3: Build the Basic Timeline
 
     -  Add the script mentioned below to the **init** method.
 
-    this._timelineElm = document.createElement("div");
+    		this._timelineElm = document.createElement("div");
     
-    container.appendChild(this._timelineElm);
+    		container.appendChild(this._timelineElm);
     
 10.  Create a function that will render the timeline
 
-    -  Add the function below.
+   -  Add the function below.
 
         private renderTimeline(): void {
     
@@ -405,27 +400,27 @@ Task \#3: Build the Basic Timeline
 
 11.  Call the **renderTimeline** function from the **updateView** function.
 
-    -  Locate the **updateView** function.
+   -  Locate the **updateView** function.
 
-    -  Add the script mentioned below inside the **updateView** function.
+   -  Add the script mentioned below inside the **updateView** function.
 
-    this.renderTimeline();
+    		this.renderTimeline();
 
 12.  Build and start
 
-    -  Go to the **Terminal** and make sure you are still in the **src**
+   -  Go to the **Terminal** and make sure you are still in the **src**
         directory.
 
-    -  Run the build command.
+   -  Run the build command.
 
-    npm run build
+    		npm run build
 
 13.  The build should succeed.
 
 14.  Run the start watch command. This command will keep the test environment
     running and auto update when you change the component.
 
-    npm start watch
+    	npm start watch
 
 15.  **Do not** close the test environment.
 
@@ -444,15 +439,15 @@ file loaded into the test harness.
     -  Add the below mentioned data inside the **testdata.csv** file and Save
         it.
 
-    contoso_permitid,contoso_name,contoso_scheduleddate,statuscode
+    		contoso_permitid,contoso_name,contoso_scheduleddate,statuscode
     
-    123,Electrical:Rough Inspection:Passed,8/1/2019,Passed
+    		123,Electrical:Rough Inspection:Passed,8/1/2019,Passed
     
-    124,Electrical:Rough Inspection:Passed,8/5/2019,Passed
+    		124,Electrical:Rough Inspection:Passed,8/5/2019,Passed
     
-    125,Plumbing:Rough Inspection:Failed,8/8/2019,Failed
+    		125,Plumbing:Rough Inspection:Failed,8/8/2019,Failed
     
-    126,Plumbing:Rough Inspection:Passed,8/10/2019,Passed
+    		126,Plumbing:Rough Inspection:Passed,8/10/2019,Passed
 
 2.  Create Timeline Data class
 
@@ -460,40 +455,40 @@ file loaded into the test harness.
 
     -  Paste the code below after the **type DataSet** line.
 
-    class TimelineData {
+    		class TimelineData {
     
-        id: string;
+        	id: string;
     
-        content: string;
+        	content: string;
     
-        start: string;
+        	start: string;
     
-        className: string;
+        	className: string;
     
-        constructor(id: string, content: string, start: string, className: string) {
+        	constructor(id: string, content: string, start: string, className: string) {
     
-            this.id = id;
+            		this.id = id;
     
-            this.content = content;
+            		this.content = content;
     
-            this.start = start;
+           		this.start = start;
     
-            this.className = className;
+            		this.className = className;
     
-        }
+        	}
     
-    }
+    		}
 
 3.  Add the timeline data array property inside the **export** class
     timelinecontrol function and below the **\_timelineElm** definition.
 
-    private _timelineData : TimelineData[] = [];
+   	 private _timelineData : TimelineData[] = [];
 
 4.  Add a method that will create the timeline data.
 
     -  Add the method mentioned below after the **render** method.
 
-        private createTimelineData(gridParam: DataSet) {
+        	private createTimelineData(gridParam: DataSet) {
     
             this._timelineData = [];
     
@@ -502,16 +497,16 @@ file loaded into the test harness.
                 for (let currentRecordId of gridParam.sortedRecordIds) {
     
                     console.log('record: ' +
-    gridParam.records[currentRecordId].getRecordId());
+    		gridParam.records[currentRecordId].getRecordId());
     
                     var permitName =
-    gridParam.records[currentRecordId].getFormattedValue('contoso_name')
+    		gridParam.records[currentRecordId].getFormattedValue('contoso_name')
     
                     var permitDate =
-    gridParam.records[currentRecordId].getFormattedValue('contoso_scheduleddate')
+   		 gridParam.records[currentRecordId].getFormattedValue('contoso_scheduleddate')
     
                     var permitStatus =
-    gridParam.records[currentRecordId].getFormattedValue('statuscode')
+    		gridParam.records[currentRecordId].getFormattedValue('statuscode')
     
                     var permitColor = "green";
     
@@ -524,7 +519,7 @@ file loaded into the test harness.
                     if (permitName != null)
     
                         this._timelineData.push(new TimelineData(currentRecordId,
-    permitName, permitDate, permitColor));
+   		 permitName, permitDate, permitColor));
     
                 }
     
@@ -534,9 +529,9 @@ file loaded into the test harness.
     
                 //handle no data
     
-            }
+           	 }
     
-        }
+        	}
 
 5.  Call the createTimelineData method from the updateView method.
 
@@ -560,7 +555,7 @@ file loaded into the test harness.
 
     -  Replace the hardcoded **items** with code below.
 
-    var items = new vis.DataSet(this._timelineData);
+    		var items = new vis.DataSet(this._timelineData);
 
 7.  Make sure the test environment shows your changes and test the timeline
     control with the test data.
@@ -594,21 +589,21 @@ color of the items on the timeline.
 
     -  Add the style below to the **timelinecontrol.css** file.
 
-    .red{
+    		.red{
     
-    background:red;
+    		background:red;
     
-    color:white;
+   		 color:white;
     
-    }
+    		}
     
-    .green{
+   		.green{
     
-    background:green;
+   		 background:green;
     
-    color:white;
+    		color:white;
     
-    }
+    		}
 
 1.  Check the test environment, load the test data and make sure it shows your
     changes
@@ -665,7 +660,7 @@ Task \#1: Setup and Publish
 
     -  Run the command below. Replace **\<orgurl\>** with **URL** you copied.
 
-pac auth create --url \<orgurl\>
+			pac auth create --url \<orgurl\>
 
 1.  Sign in with your **admin** user name.
 
@@ -676,7 +671,7 @@ pac auth create --url \<orgurl\>
         be used over and over during development to quickly see your component
         in the live form.
 
-    pac pcf push --pp contoso
+   		 pac pcf push --pp contoso
 
 Task \#2: Add Timeline Control to the Permit Form
 -------------------------------------------------
@@ -848,7 +843,7 @@ Task \#1: Export Solution
 
    -  Click **Next**.
 
-    -  Select **Managed** and click **Export**.
+   -  Select **Managed** and click **Export**.
 
    -  Save the **Exported** solution on your machine.
 
