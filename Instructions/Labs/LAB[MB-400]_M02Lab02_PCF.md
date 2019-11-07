@@ -439,7 +439,7 @@ file loaded into the test harness.
 
     -  Add the below mentioned data inside the **testdata.csv** file and Save
         it.
-
+```
     		contoso_permitid,contoso_name,contoso_scheduleddate,statuscode
     
     		123,Electrical:Rough Inspection:Passed,8/1/2019,Passed
@@ -449,13 +449,13 @@ file loaded into the test harness.
     		125,Plumbing:Rough Inspection:Failed,8/8/2019,Failed
     
     		126,Plumbing:Rough Inspection:Passed,8/10/2019,Passed
-
+```
 2.  Create Timeline Data class
 
     -  Open the **index.ts** file.
 
     -  Paste the code below after the **type DataSet** line.
-
+```
     		class TimelineData {
     
         		id: string;
@@ -479,7 +479,7 @@ file loaded into the test harness.
         		}
     
     			}
-
+```
 3.  Add the timeline data array property inside the **export** class
     timelinecontrol function and below the **\_timelineElm** definition.
 
@@ -488,8 +488,8 @@ file loaded into the test harness.
 4.  Add a method that will create the timeline data.
 
     -  Add the method mentioned below after the **render** method.
-
-        		private createTimelineData(gridParam: DataSet) {
+```
+        	private createTimelineData(gridParam: DataSet) {
     
             	this._timelineData = [];
     
@@ -533,13 +533,14 @@ file loaded into the test harness.
            	 }
     
         	}
-
+```
 5.  Call the createTimelineData method from the updateView method.
 
     -  Go to the **updateView** method.
 
     -  Replace the code inside the **updateView** method with the code below.
 
+```
             if (!context.parameters.timelineDataSet.loading) {
     
                 // Get sorted columns on View
@@ -549,6 +550,7 @@ file loaded into the test harness.
                 this.renderTimeline();
     
             }
+```
 
 6.  Replace the hardcoded items with the csv data.
 
@@ -589,8 +591,9 @@ color of the items on the timeline.
     -  Expand the **css** folder and open the **timelinecontrol.css**
 
     -  Add the style below to the **timelinecontrol.css** file.
-    
-    	```.red{
+
+```
+    	.red{
     		background:red;
    		 color:white;
     		}
@@ -598,7 +601,8 @@ color of the items on the timeline.
 		.green{
 		background:green;
    		color:white;
-    	}```
+    	}
+```
 
 1.  Check the test environment, load the test data and make sure it shows your
     changes
