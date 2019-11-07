@@ -835,7 +835,6 @@ API.
     -   Open the **PermitFormFunctions.js** file.
 
     -   Add the function below.
-
             _lockPermitRequest : function (permitID, reason) {
     
                },
@@ -846,10 +845,11 @@ API.
         function.
 
             this.entity = { entityType: "contoso_permit", id: permitID };
-    
-            this.Reason = reason;
+                this.Reason = reason;
 
 4.  Build and return the request
+
+  -   Add the script mentioned below in the **lockPermitRequest** function.
 
             this.getMetadata = function () {
     
@@ -880,9 +880,6 @@ API.
     				};
     			};
 			
-    -   Add the script mentioned below in the **lockPermitRequest** function.
-
-
 5.  Add the function that will be called from the action button.
 
     -   Add the function mentioned below after the **\_lockPermitRequest**
