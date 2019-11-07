@@ -586,7 +586,7 @@ color of the items on the timeline.
 
     -  Add the style below to the **timelinecontrol.css** file.
 
-    		.red{
+    		```.red{
     
     		background:red;
     
@@ -600,7 +600,7 @@ color of the items on the timeline.
     
     		color:white;
     
-    		}
+    		}```
 
 1.  Check the test environment, load the test data and make sure it shows your
     changes
