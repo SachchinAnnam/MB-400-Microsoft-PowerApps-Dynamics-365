@@ -851,35 +851,35 @@ API.
 
   -   Add the script mentioned below in the **lockPermitRequest** function.
 
-			this.getMetadata = function () {
+	this.getMetadata = function () {
 	
-			return {
+		return {
 		
-				boundParameter: "entity", parameterTypes: {
+			boundParameter: "entity", parameterTypes: {
 			
-					"entity": {
+				"entity": {
 				
-						typeName: "mscrm.contoso_permit",
+					typeName: "mscrm.contoso_permit",
 					
-						structural property: 5
+					structural property: 5
 					
-						},
-					
-					"Reason": {
-				
-						"typeName": "Edm.String",
-					
-							"structuralProperty": 1 //Primitive Type 
-					
-						}
 					},
+					
+				"Reason": {
 				
-				operationType: 0, //This is an action. Use '1' for functions and '2' for CRUD
-				operationName: "contoso_LockPermit", 
+					"typeName": "Edm.String",
+					
+						"structuralProperty": 1 //Primitive Type 
+					
+					}
+				},
+				
+			operationType: 0, //This is an action. Use '1' for functions and '2' for CRUD
+			operationName: "contoso_LockPermit", 
 			
 			};
 		
-			};
+		};
 
 5.  Add the function that will be called from the action button.
 
