@@ -585,7 +585,7 @@ color of the items on the timeline.
     -  Expand the **css** folder and open the **timelinecontrol.css**
 
     -  Add the style below to the **timelinecontrol.css** file.
-
+    
     	```.red{
     		background:red;
    		 color:white;
@@ -594,7 +594,7 @@ color of the items on the timeline.
 		.green{
 		background:green;
    		color:white;
-    		}```
+    	}```
 
 1.  Check the test environment, load the test data and make sure it shows your
     changes
