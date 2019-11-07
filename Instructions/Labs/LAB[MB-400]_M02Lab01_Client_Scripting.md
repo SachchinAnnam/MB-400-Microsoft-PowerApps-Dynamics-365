@@ -394,11 +394,11 @@ Task \#1: Create Function
     -  Go back to **Visual Studio Code**.
 
     -  Add the function mentioned below to **PermitFormFuntions** inside the
-    function created in Step 1(d).
+    function created in Step 1d.
 
-        _handlePermitTypeSettings: function (executionContext) {
+        	_handlePermitTypeSettings: function (executionContext) {
 
-             },
+             		},
 
 2. Get form context from the execution context
 
