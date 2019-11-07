@@ -865,20 +865,20 @@ API.
     
     			},
     
-    				"Reason": {
+    					"Reason": {
     
-    				"typeName": "Edm.String",
+    					"typeName": "Edm.String",
     
-    					"structuralProperty": 1 //Primitive Type
-   				 	}
+    						"structuralProperty": 1 //Primitive Type
+   				 		}
 				 
-    				},
+    					},
 				
    					operationType: 0, //This is an action. Use '1' for functions and '2' for CRUD
    					operationName: "contoso_LockPermit",
 				 
+    					};
     				};
-    			};
 			
 5.  Add the function that will be called from the action button.
 
