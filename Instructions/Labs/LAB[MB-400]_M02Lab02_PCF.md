@@ -365,8 +365,9 @@ Task \#3: Build the Basic Timeline
 10.  Create a function that will render the timeline
 
    -  Add the function below.
-
-        	private renderTimeline(): void {    // Create a DataSet (allows two way data-binding)
+   
+	```
+        private renderTimeline(): void {    // Create a DataSet (allows two way data-binding)
     
             var items = new vis.DataSet([
     
@@ -394,7 +395,8 @@ Task \#3: Build the Basic Timeline
             var timeline = new vis.Timeline(this._timelineElm, items, options);
     
         }
-
+	```
+	
 11.  Call the **renderTimeline** function from the **updateView** function.
 
    -  Locate the **updateView** function.
